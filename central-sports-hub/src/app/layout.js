@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Sports Hub for football, soccer, futbol, baseball, basketball, professional sports, games. Search fields, arenas, venues, and locations. Ticketmaster, DraftKings, Fanatics, and others are available with tickets for sale by users. Athlete statistics and team rosters are presented with updated game schedules and weather",
   organization: "The Weak Links",
-  Authors: "S. Kaste, S. Iqbal, T. Ippolito",
+  authors: "S. Kaste, S. Iqbal, T. Ippolito",
 };
 
 export default function RootLayout({ children }) {
