@@ -1,12 +1,7 @@
 import React from "react";
 
-const NewUserPage = () => {
-  return (
-    <div>
-      <h2>NewUserPage</h2>
-    </div>
-  );
-  console.log("NEWUSER", NewUserPage);
+const page = () => {
+  return <div className="text-zinc-900 text-center">NEW USER PAGE</div>;
 };
 
-export default "NewUserPage";
+export default page;
