@@ -1,10 +1,10 @@
 import React from "react";
-import Register from "../components/Register";
+import Profile from "../components/Register";
 
 const page = () => {
   return (
     <>
-      <Register />
+      <Profile />
     </>
   );
 };
