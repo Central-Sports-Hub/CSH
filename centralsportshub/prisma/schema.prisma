@@ -23,8 +23,9 @@ model User {
 }
 
 model Order {
+  id          Int @id @default(autoincrement())
   user_id     Int
-  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)       
+  user        User @relation(fields: [user_id], references: [id], onDelete: Cascade)       
   ticket_id   Int
   ticket      Ticket @relation(fields: [ticket_id], references: [id], onDelete: Cascade)
   created_at  DateTime
@@ -35,19 +36,19 @@ model Ticket {
   event_id    Int 
   event       Event @relation(fields: [event_id], references: [id], onDelete: Cascade)
   owner_id    Int
-  owner       User @relation(fields: [owner_id], references: [id] onDelete: Cascade)
+  owner       User @relation(fields: [owner_id], references: [id], onDelete: Cascade)
   section     Int
   seat        Int
   row         Int
   price       Int
-  date        Date
+  date        DateTime
   order       Order[]
 }
 
 model Event {
   id          Int @id @default (autoincrement())
   venue_id    Int
-  venue       Venues @relation(fields: [venue_id], references: [id] onDelete: Cascade)
+  venue       Venues @relation(fields: [venue_id], references: [id], onDelete: Cascade)
   team1       String
   team2       String
   start_time  DateTime
@@ -56,7 +57,7 @@ model Event {
 }
 
 model Venues {
-  id          Int @aid @default (autoincrement())
+  id          Int @id @default (autoincrement())
   name        String
   location    String
   home_team   String
@@ -67,10 +68,11 @@ model Venues {
 }
 
 model Comments {
+  id            Int @id @default (autoincrement())
   venue_id      Int
-  venue         Venues @relation(fields: [venue_id], references: [id] onDelete: Cascade)
+  venue         Venues @relation(fields: [venue_id], references: [id], onDelete: Cascade)
   user_id       Int
-  user          User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user          User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   comment_text  String
   created_at    DateTime
   category      String
