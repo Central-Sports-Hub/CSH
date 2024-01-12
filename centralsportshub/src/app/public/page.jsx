@@ -1,10 +1,10 @@
 import React from "react";
-import Register from "../components/Register";
+import Public from "../components/Public";
 
 const page = () => {
   return (
     <>
-      <Register />
+      <Public />
     </>
   );
 };

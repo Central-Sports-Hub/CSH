@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import React from "react";
 
 const Nav = () => {
@@ -12,6 +13,7 @@ const Nav = () => {
             Central Sports Hub
           </span>
         </a>
+
         <div className="flex md:order-2">
           <button
             type="button"
@@ -37,6 +39,7 @@ const Nav = () => {
             </svg>
             <span className="sr-only">Search</span>
           </button>
+
           <div className="relative hidden md:block">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
@@ -63,6 +66,7 @@ const Nav = () => {
               placeholder="Search..."
             />
           </div>
+          <UserButton afterSignOutUrl="/public" />
           <button
             data-collapse-toggle="navbar-search"
             type="button"
@@ -120,11 +124,11 @@ const Nav = () => {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
-                href="/register"
+                href="/profile"
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                 aria-current="page"
               >
-                Register
+                Profile
               </a>
             </li>
             <li>
