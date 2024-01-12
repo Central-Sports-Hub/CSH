@@ -66,7 +66,7 @@ const Nav = () => {
               placeholder="Search..."
             />
           </div>
-          <UserButton afterSignOutUrl="/public" />
+
           <button
             data-collapse-toggle="navbar-search"
             type="button"
