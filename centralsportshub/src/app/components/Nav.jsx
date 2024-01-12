@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import React from "react";
 
 const Nav = () => {
@@ -12,6 +13,7 @@ const Nav = () => {
             Central Sports Hub
           </span>
         </a>
+
         <div className="flex md:order-2">
           <button
             type="button"
@@ -37,6 +39,7 @@ const Nav = () => {
             </svg>
             <span className="sr-only">Search</span>
           </button>
+
           <div className="relative hidden md:block">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
@@ -63,6 +66,7 @@ const Nav = () => {
               placeholder="Search..."
             />
           </div>
+          <UserButton afterSignOutUrl="/" />
           <button
             data-collapse-toggle="navbar-search"
             type="button"
