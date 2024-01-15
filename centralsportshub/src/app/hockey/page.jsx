@@ -1,5 +1,4 @@
-import React from "react";
-import Hockey from "../components/Hockey";
+import Hockey from "@/app/components/Hockey";
 
 const page = () => {
   return (

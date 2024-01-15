@@ -1,5 +1,4 @@
-import React from "react";
-import Soccer from "../components/Soccer";
+import Soccer from "@/app/components/Soccer";
 
 const page = () => {
   return (

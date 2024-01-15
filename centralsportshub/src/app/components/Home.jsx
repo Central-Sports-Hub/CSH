@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="text-zinc-900 font-medium px-2 text-center">
       Home Components
     </div>
   );
