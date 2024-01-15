@@ -3,7 +3,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-50 border-gray-500 dark:bg-gray-900">
+    <nav className="bg-gray-50 border-gray-500 dark:bg-gray-900 rounded-lg">
       <UserButton afterSignOutUrl="/" />
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
