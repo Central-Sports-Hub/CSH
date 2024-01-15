@@ -1,5 +1,4 @@
-import React from "react";
-import Basketball from "../components/Basketball";
+import Basketball from "@/app/components/Basketball";
 
 const page = () => {
   return (
