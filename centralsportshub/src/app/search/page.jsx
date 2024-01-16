@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SearchInput from "../searchInput";
 import { useSearchParams } from "next/navigation";
@@ -8,7 +9,7 @@ const page = () => {
 
   return (
     <div>
-      SearchComponent
+      SearchResults
       <SearchInput />
     </div>
   );
