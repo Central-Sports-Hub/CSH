@@ -8,6 +8,9 @@ const page = () => {
   console.log("SEARCH PARAMS", search);
   const searchQuery = search ? search.get("q") : null;
 
+  const encodedSearchQuery = encodeURI(searchQuery || "");
+  console.log("SEARCH PARAMS", encodedSearchQuery);
+
   return (
     <div>
       SearchResults
