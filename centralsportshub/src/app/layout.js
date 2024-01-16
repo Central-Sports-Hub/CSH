@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className="bg-slate-900 {inter.className}">
           <Nav />
           <SecondaryNav />
           {children}
