@@ -7,6 +7,8 @@ const SearchInput = () => {
   const onSearch = (event) => {
     event.preventDefault();
 
+    const encodedSearchQuery = encodeURI(searchQuery);
+
     console.log("current query", searchQuery);
   };
 
