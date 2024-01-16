@@ -1,18 +1,17 @@
 "use client";
 import React, { useState } from "react";
 
-//Make for onChange
-const searchInput = () => {
+const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const onSearch = ({ formEvent }) => {
+  const onSearch = (event) => {
     event.preventDefault();
 
     console.log("current query", searchQuery);
   };
 
   return (
-    <form>
+    <form onSubmit={onSearch}>
       <input
         value={searchQuery}
         onChange={(event) => setSearchQuery(event.target.value)}
@@ -21,4 +20,4 @@ const searchInput = () => {
   );
 };
 
-export default searchInput;
+export default SearchInput;
