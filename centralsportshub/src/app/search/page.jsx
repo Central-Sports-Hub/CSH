@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 const page = () => {
   const search = useSearchParams();
   console.log("SEARCH PARAMS", search);
+  const searchQuery = search.get("q");
 
   return (
     <div>
