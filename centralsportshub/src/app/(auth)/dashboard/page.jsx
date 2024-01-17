@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { auth } from "@clerk/nextjs";
-import prismadb from "@/app/lib/prismadb";
-import CreateProfile from "@/components/CreateProfile";
+
+import CreateProfile from "../../components/CreateProfile";
 
 const page = () => {
   const [onboarded, setOnboarded] = useState(false);
@@ -14,11 +14,12 @@ const page = () => {
 
     const getUser = async () => {
       try {
-        const user = await prismadb.user.findUnique({
-          where: {
-            clerkId: userId,
-          },
-        });
+        //query a backend endpoint to get user if exists then process below to onboard or go to dash.
+        // const user = await prismadb.user.findUnique({
+        //   where: {
+        //     clerkId: userId,
+        //   },
+        // });
 
         setOnboarded(!!user);
       } catch (error) {
