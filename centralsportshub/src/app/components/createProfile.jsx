@@ -1,14 +1,7 @@
 import React from "react";
+//create form, onsubmit function to POST data to backend and db entry.
+const createProfile = () => {
+  return <div>createProfile</div>;
+};
 
-// const createProfile = () => {
-// prisma.user.create({
-//   clerkId: [clerkId],
-//   email: [user.email],
-//   firstName: [user.firstName],
-//   lastName: [user.lastName],
-//   isAdmin: [false],
-// });
-// return <div>Create Profile Page</div>;
-// };
-
-// export default createProfile;
+export default createProfile;
