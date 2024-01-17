@@ -1,8 +1,16 @@
 import prismadb from "@/app/lib/prismadb";
 
 export async function POST(request) {
-  //handle post request to create user profile
-  //verify user id is not in DB
-  // create user profile
-  //return status
+  const createUser = async () => {
+    console.log("creating user");
+  
+    await prisma.user.create({
+      data: [
+        {
+          email: {""},
+          firstName:{""} ,
+          lastName: {""} ,
+          clerkId: {""},
+          isAdmin: {false},
+        },
 }
