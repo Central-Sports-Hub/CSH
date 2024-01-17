@@ -14,7 +14,8 @@ const page = () => {
 
     const getUser = async () => {
       try {
-        //query a backend endpoint to get user if exists then process below to onboard or go to dash.
+        const { data: foundUser } = await get("/auth/user");
+        //query a backend endpoint to get user if exists then process below to onboard or go to dash. GET route to the backend.
         // const user = await prismadb.user.findUnique({
         //   where: {
         //     clerkId: userId,
