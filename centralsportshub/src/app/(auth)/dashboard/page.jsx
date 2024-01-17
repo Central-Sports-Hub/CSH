@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { auth } from "@clerk/nextjs";
-import prismadb from "@/lib/prismadb";
+import prismadb from "@/app/lib/prismadb";
 
 //check db for user profile, if no profile show create profile comp and have user fill in info to create profile.
 const { userId } = auth();
