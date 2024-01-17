@@ -1,31 +1,40 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "@clerk/nextjs";
 import prismadb from "@/app/lib/prismadb";
-
-//check db for user profile, if no profile show create profile comp and have user fill in info to create profile.
-const { userId } = auth();
-const [onboarded, setOnboarded] = useState(false);
-//query db for user
-const user = await prismadb.user.findUnique({
-  where: {
-    clerkId: userId,
-  },
-});
-
-// may need to be in useeffect.
-// if user .....set onBoarded (false)
-if (!user) {
-  //sets to false to show onboard comp.
-  setOnboarded(false);
-} else {
-  setOnboarded(true);
-}
+import CreateProfile from "@/components/CreateProfile";
 
 const page = () => {
-  //if no profile send to create profile page
+  const [onboarded, setOnboarded] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const { userId } = auth();
+
+  useEffect(() => {
+    if (!userId) return;
+
+    const getUser = async () => {
+      try {
+        const user = await prismadb.user.findUnique({
+          where: {
+            clerkId: userId,
+          },
+        });
+
+        setOnboarded(!!user);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getUser();
+  }, [userId]);
+
+  if (loading) return <div>Loading...</div>;
+
   if (!onboarded) return <CreateProfile />;
-  //if user profile exist display content.
+
   return <div className="text-zinc-900">DASHBOARD FOR LOGGED IN USER</div>;
 };
 
