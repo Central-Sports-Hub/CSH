@@ -150,6 +150,15 @@ const Nav = () => {
                 Home
               </a>
             </li>
+            <li>
+              <a
+                href="/dashboard"
+                className="text-blue-600 hover:text-orange-500"
+                aria-current="page"
+              >
+                Dashboard
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -158,4 +167,3 @@ const Nav = () => {
 };
 
 export default Nav;
-

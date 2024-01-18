@@ -11,69 +11,69 @@ datasource db {
 }
 
 model User {
-  id          Int @id @default(autoincrement())
-  email       String
-  firstName   String
-  lastName    String
-  password    String
-  isAdmin     Boolean
-  comments    Comments[]
-  ticket      Ticket[]
-  order       Order[]
+  id        Int        @id @default(autoincrement())
+  clerkId   String     @unique
+  email     String
+  firstName String
+  lastName  String
+  isAdmin   Boolean
+  comments  Comments[]
+  ticket    Ticket[]
+  order     Order[]
 }
 
 model Order {
-  id          Int @id @default(autoincrement())
-  user_id     Int
-  user        User @relation(fields: [user_id], references: [id], onDelete: Cascade)       
-  ticket_id   Int
-  ticket      Ticket @relation(fields: [ticket_id], references: [id], onDelete: Cascade)
-  created_at  DateTime
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  ticket_id  Int
+  ticket     Ticket   @relation(fields: [ticket_id], references: [id], onDelete: Cascade)
+  created_at DateTime
 }
 
 model Ticket {
-  id          Int @id @default (autoincrement())
-  event_id    Int 
-  event       Event @relation(fields: [event_id], references: [id], onDelete: Cascade)
-  owner_id    Int
-  owner       User @relation(fields: [owner_id], references: [id], onDelete: Cascade)
-  section     Int
-  seat        Int
-  row         Int
-  price       Int
-  date        DateTime
-  order       Order[]
+  id       Int      @id @default(autoincrement())
+  event_id Int
+  event    Event    @relation(fields: [event_id], references: [id], onDelete: Cascade)
+  owner_id Int
+  owner    User     @relation(fields: [owner_id], references: [id], onDelete: Cascade)
+  section  Int
+  seat     Int
+  row      Int
+  price    Int
+  date     DateTime
+  order    Order[]
 }
 
 model Event {
-  id          Int @id @default (autoincrement())
-  venue_id    Int
-  venue       Venues @relation(fields: [venue_id], references: [id], onDelete: Cascade)
-  team1       String
-  team2       String
-  start_time  DateTime
-  sport       String
-  ticket      Ticket[]
+  id         Int      @id @default(autoincrement())
+  venue_id   Int
+  venue      Venues   @relation(fields: [venue_id], references: [id], onDelete: Cascade)
+  team1      String
+  team2      String
+  start_time DateTime
+  sport      String
+  ticket     Ticket[]
 }
 
 model Venues {
-  id          Int @id @default (autoincrement())
-  name        String
-  location    String
-  home_team   String
-  capacity    Int
-  img_url     String
-  comments    Comments[]
-  event       Event[]
+  id        Int        @id @default(autoincrement())
+  name      String
+  location  String
+  home_team String
+  capacity  Int
+  img_url   String
+  comments  Comments[]
+  event     Event[]
 }
 
 model Comments {
-  id            Int @id @default (autoincrement())
-  venue_id      Int
-  venue         Venues @relation(fields: [venue_id], references: [id], onDelete: Cascade)
-  user_id       Int
-  user          User @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  comment_text  String
-  created_at    DateTime
-  category      String
+  id           Int      @id @default(autoincrement())
+  venue_id     Int
+  venue        Venues   @relation(fields: [venue_id], references: [id], onDelete: Cascade)
+  user_id      Int
+  user         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  comment_text String
+  created_at   DateTime
+  category     String
 }
