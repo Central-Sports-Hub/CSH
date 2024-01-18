@@ -1,43 +1,45 @@
 "use client";
+import { useAuth } from "@clerk/nextjs";
+import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { auth } from "@clerk/nextjs";
 
-import CreateProfile from "../../components/CreateProfile";
-
-const page = () => {
+const Page = () => {
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
   const [onboarded, setOnboarded] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const { userId } = auth();
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    if (!userId) return;
+    if (isLoaded && userId) {
+      const fetchUserData = async () => {
+        try {
+          const response = await axios.post(`/api/test/user/`, { userId });
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      };
+      fetchUserData();
+    }
+  }, [isLoaded, userId]);
 
-    const getUser = async () => {
-      try {
-        const { data: foundUser } = await get("/auth/user");
-        //query a backend endpoint to get user if exists then process below to onboard or go to dash. GET route to the backend.
-        // const user = await prismadb.user.findUnique({
-        //   where: {
-        //     clerkId: userId,
-        //   },
-        // });
-
-        setOnboarded(!!user);
-      } catch (error) {
-        console.error("Error fetching user:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getUser();
-  }, [userId]);
-
-  if (loading) return <div>Loading...</div>;
-
-  if (!onboarded) return <CreateProfile />;
-
-  return <div className="text-zinc-900">DASHBOARD FOR LOGGED IN USER</div>;
+  return (
+    <div className="text-zinc-900">
+      {isLoaded && userId ? (
+        <>
+          <div>DASHBOARD FOR LOGGED IN USER</div>
+          {userData && (
+            <div>
+              <p>Name: {userData.name}</p>
+              <p>Email: {userData.email}</p>
+              {/* Display other user data as needed */}
+            </div>
+          )}
+        </>
+      ) : (
+        <div>Please register or log in</div>
+      )}
+    </div>
+  );
 };
 
-export default page;
+export default Page;
