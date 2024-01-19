@@ -8,7 +8,7 @@ async function getVenue(sport) {
   if (sport === "football") {
   } else {
     sport === "soccer";
-    return ["stadium 1", "stadium 2"];
+    return ["venue 1", "venue 2"];
   }
   return [];
 }
