@@ -1,35 +1,23 @@
-"use client";
-
-import { useParams, useRouter } from "next/navigation";
-
 import React from "react";
+import Event from "../../components/Venue";
 
-async function getVenue(sport) {
-  if (sport === "football") {
-  } else {
-    sport === "soccer";
-    return ["venue 1", "venue 2"];
-  }
-  return [];
-}
+const eventData = {
+  name: "Example Event",
+  location: "Example Location",
+  homeTeam: "Example Home Team",
+  capacity: 1000,
+  imgUrl: "https://example.com/image.jpg",
+  comments: ["This is a great event!", "I can't wait to attend!"],
+  event: {}, // Add any additional event data here
+};
 
-const Venue = async () => {
-  const { venue } = useParams();
-
-  const sport = await getVenue(sport);
-
+const VenuePage = () => {
   return (
-    <>
-      <h1>venue: {sport}</h1>
-      <div>
-        {venue.map((sport) => (
-          <div>
-            <h2>{venue}</h2>
-          </div>
-        ))}
-      </div>
-    </>
+    <div>
+      <h1>Venue Page</h1>
+      <Venue {...venueData} />
+    </div>
   );
 };
 
-export default Venue;
+export default VenuePage;
