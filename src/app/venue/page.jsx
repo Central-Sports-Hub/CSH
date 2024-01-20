@@ -1,13 +1,13 @@
 import React from "react";
 import Event from "../../components/Venue";
 
-const eventData = {
-  name: "Example Event",
-  location: "Example Location",
-  homeTeam: "Example Home Team",
+const venueData = {
+  name: "Example Venue",
+  location: "Venue Location",
+  homeTeam: "Venue Home Team",
   capacity: 1000,
   imgUrl: "https://example.com/image.jpg",
-  comments: ["This is a great event!", "I can't wait to attend!"],
+  comments: ["This is a great venue!", "I can't wait to attend!"],
   event: {}, // Add any additional event data here
 };
 
