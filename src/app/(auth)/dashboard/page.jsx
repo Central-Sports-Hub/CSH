@@ -10,19 +10,23 @@ const page = () => {
 
   console.log("USER:", user);
 
+  console.log("USER:", user);
+
   useEffect(() => {
-    if (isLoaded && userId) {
-      const fetchUserData = async () => {
-        try {
-          const response = await axios.post(`/api/test/user/`, { userId });
-          setUserData(response.data);
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-        }
-      };
-      fetchUserData();
-    }
-  }, [isLoaded, userId]);
+    const fetchUserData = async () => {
+      if (isSignedIn) {
+        const response = await axios.post("/api/user", { user: userId });
+        const data = response.data;
+        setUserData(data);
+      }
+    };
+
+    fetchUserData();
+  }, [isSignedIn, userId]);
+
+  if (!isLoaded) {
+    return null;
+  }
 
   if (isSignedIn) {
     return (
