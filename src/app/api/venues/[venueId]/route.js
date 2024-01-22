@@ -15,3 +15,4 @@ export async function GET(request, { params }) {
     return new Response(JSON.stringify(venue));
             
     }
+    

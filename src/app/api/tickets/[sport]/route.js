@@ -6,7 +6,7 @@ export async function GET(request, { params }) {
 
     const sport = params.sport.toLowerCase()
     
-    const ticket = await prisma.ticket.findMany({
+    const tickets = await prisma.ticket.findMany({
         where: {
             event: {
                 sport: {
@@ -17,6 +17,7 @@ export async function GET(request, { params }) {
         },
     });
             
-    return new Response(JSON.stringify(ticket));
+    return new Response(JSON.stringify(tickets));
             
     }
+    

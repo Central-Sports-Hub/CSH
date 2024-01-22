@@ -7,3 +7,4 @@ export async function GET(request) {
   //send the users as a response
   return new Response(JSON.stringify(users));
 }
+
