@@ -22,24 +22,23 @@ const Page = () => {
     }
   }, [isLoaded, userId]);
 
-  return (
-    <div className="text-zinc-900">
-      {isLoaded && userId ? (
-        <>
-          <div>DASHBOARD FOR LOGGED IN USER</div>
-          {userData && (
-            <div>
-              <p>Name: {userData.name}</p>
-              <p>Email: {userData.email}</p>
-              {/* Display other user data as needed */}
-            </div>
-          )}
-        </>
-      ) : (
-        <div>Please register or log in</div>
-      )}
-    </div>
-  );
+  if (isSignedIn) {
+    return (
+      <div>
+        <p>Full Name: {user.fullName}!</p>
+        <p>Email: {user.emailAddresses[0].emailAddress}</p>
+        <p>UserID: {userId}</p>
+        {userData && (
+          <div>
+            <p>Data from backend API:</p>
+            <pre>{JSON.stringify(userData, null, 2)}</pre>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return <div>Not signed in</div>;
 };
 
-export default Page;
+export default page;
