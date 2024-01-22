@@ -8,10 +8,6 @@ const page = () => {
   const { userId, getToken } = useAuth();
   const [userData, setUserData] = useState(null);
 
-  console.log("USER:", user);
-
-  console.log("USER:", user);
-
   useEffect(() => {
     const fetchUserData = async () => {
       if (isSignedIn) {
