@@ -5,7 +5,7 @@ const VenuePage = () => {
   const [venueData, setVenueData] = useState(null);
 
   useEffect(() => {
-    fetch("/api/venue")
+    fetch("../api/venue")
       .then((res) => res.json())
       .then((data) => setVenueData(data));
   }, []);
