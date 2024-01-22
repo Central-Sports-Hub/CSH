@@ -3,9 +3,17 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-50 border-gray-500 dark:bg-gray-900 rounded-lg">
-      <UserButton afterSignOutUrl="/" />
+    <nav 
+      className="bg-gray-50 border-gray-500 dark:bg-gray-900 rounded-lg"
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div
+          style={{ height: '20px', width: '20px' }}
+        >
+          <UserButton
+            afterSignOutUrl="/"
+          />
+        </div>
         <a
           href="/home"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -14,6 +22,7 @@ const Nav = () => {
             Central Sports Hub
           </span>
         </a>
+        
 
         <div className="flex md:order-2">
           <button

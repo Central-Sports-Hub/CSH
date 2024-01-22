@@ -17,4 +17,3 @@ export async function GET(request, { params }) {
 }
 
 // TODO: get all venues for a sport
-// TODO: get all events for a sport
