@@ -1,12 +1,14 @@
 "use client";
-import { useAuth } from "@clerk/nextjs";
+import { useUser, useAuth } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const Page = () => {
-  const { isLoaded, userId, sessionId, getToken } = useAuth();
-  const [onboarded, setOnboarded] = useState(false);
+const page = () => {
+  const { isSignedIn, user, isLoaded } = useUser();
+  const { userId, getToken } = useAuth();
   const [userData, setUserData] = useState(null);
+
+  console.log("USER:", user);
 
   useEffect(() => {
     if (isLoaded && userId) {
