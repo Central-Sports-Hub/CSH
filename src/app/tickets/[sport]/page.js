@@ -34,21 +34,21 @@ export default function Tickets() {
           {tickets?.map((ticket) => (
             <div
               key={ticket.id}
-              className="bg-gray-400 rounded-lg m-4 h-12"
+              className="items-center  bg-gray-400 rounded-lg m-4 p-4 flex flex-col justify-center"
               style={{ height: "auto" }}
             >
               <Ticket
                 {...ticket}
-                class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center"
               />
               <br></br>
               <a
                 href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Purchase
                 <svg
-                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
