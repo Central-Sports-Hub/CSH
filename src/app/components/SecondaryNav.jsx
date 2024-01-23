@@ -7,7 +7,7 @@ const Nav = () => {
         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a
-              href="/football"
+              href="/sports/football"
               className="text-blue-600 hover:text-orange-500"
               aria-current="page"
             >
@@ -16,7 +16,7 @@ const Nav = () => {
           </li>
           <li>
             <a
-              href="/soccer"
+              href="/sports/soccer"
               className="text-blue-600 hover:text-orange-500"
               aria-current="page"
             >
@@ -25,7 +25,7 @@ const Nav = () => {
           </li>
           <li>
             <a
-              href="/baseball"
+              href="/sports/baseball"
               className="text-blue-600 hover:text-orange-500"
               aria-current="page"
             >
@@ -34,7 +34,7 @@ const Nav = () => {
           </li>
           <li>
             <a
-              href="/basketball"
+              href="/sports/basketball"
               className="text-blue-600 hover:text-orange-500"
               aria-current="page"
             >
@@ -43,7 +43,7 @@ const Nav = () => {
           </li>
           <li>
             <a
-              href="/hockey"
+              href="/sports/hockey"
               className="text-blue-600 hover:text-orange-500"
               aria-current="page"
             >
