@@ -31,7 +31,7 @@ export default function Tickets() {
           <div
             key={ticket.id}
             className="bg-green-500 rounded-lg m-4 h-12"
-            style={{ height: "auto" }}
+            style={{ height: "auto", marginTop: "200px" }}
           >
             <Ticket {...ticket} />
           </div>
