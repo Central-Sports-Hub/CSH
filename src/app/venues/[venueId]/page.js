@@ -38,6 +38,7 @@ export default function Venues() {
             {...venue}
             class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center"
           />
+
           <div class="mb-2 text-2m tracking-tight px-10 text-gray-900 dark:text-white">
             <h1> EVENTS:</h1>
             <div className="grid grid-cols-2 items-center">
