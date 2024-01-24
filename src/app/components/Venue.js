@@ -1,6 +1,13 @@
-import Link from "next/link"
+import Link from "next/link";
 
-export default function Venue({id, name, location, home_team, capacity, img_url}) {
+export default function Venue({
+  id,
+  name,
+  location,
+  home_team,
+  capacity,
+  img_url,
+}) {
   return (
     <div className="row-span-3">
       <Link href={`/venues/${id}`}>
@@ -11,5 +18,5 @@ export default function Venue({id, name, location, home_team, capacity, img_url}
       <div>{home_team}</div>
       <div>{capacity}</div>
     </div>
-  )
+  );
 }
