@@ -34,7 +34,24 @@ export default function Tickets() {
         >
           <Card.Body>
             <Ticket {...ticket} />
-            <Button variant="primary" className="float-center">
+            <Button
+              style={{
+                color: "gray",
+                textDecoration: "none",
+                cursor: "pointer",
+                display: "inline-block",
+                transition: "box-shadow 0.9s, transform 0.9s",
+              }}
+              onMouseOver={(e) => {
+                e.target.style.boxShadow =
+                  "0 8px 16px rgba(255, 255, 255, 0.5)";
+                e.target.style.transform = "scale(1.1)";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.boxShadow = "none";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
               Purchase Ticket
             </Button>
           </Card.Body>
