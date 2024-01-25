@@ -25,9 +25,9 @@ export default function Tickets() {
 
   return (
     <>
-      <h1 className="my-4">Tickets</h1>
+      <h1 className="my-4, p-4">Tickets</h1>
       {tickets?.map((ticket) => (
-        <Card key={ticket.id} style={{ width: "18rem" }}>
+        <Card key={ticket.id} className="p-3" style={{ width: "18rem" }}>
           <Card.Body>
             <Ticket {...ticket} />
             <Button variant="primary">Purchase Ticket</Button>
