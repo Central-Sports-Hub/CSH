@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import Ticket from "../../components/Ticket";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -30,6 +30,7 @@ export default function Tickets() {
         <Card key={ticket.id} style={{ width: "18rem" }}>
           <Card.Body>
             <Ticket {...ticket} />
+            <Button>Purchase Ticket</Button>
           </Card.Body>
         </Card>
       ))}
