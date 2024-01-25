@@ -14,7 +14,9 @@ export default function Venue({
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src="default.svg" />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>
+          <Link href={`/venues/${id}`}>{name}</Link>
+        </Card.Title>
         <Card.Text>
           <div>Location: {location}</div>
           <div>Home Team: {home_team}</div>
