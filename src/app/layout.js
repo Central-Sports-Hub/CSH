@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "./components/Footer";
 import SecondaryNav from "./components/SecondaryNav";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

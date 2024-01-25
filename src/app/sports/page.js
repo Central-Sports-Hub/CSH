@@ -1,6 +1,6 @@
-import Event from './event'
-import { useRouter } from "@next/navigation";
-import { getSports } from "???????";
+import Event from "./event";
+// import { useRouter } from "@next/navigation";
+// import { getSports } from "???????";
 
 export default async function Page() {
   const router = useRouter();
@@ -13,14 +13,14 @@ export default async function Page() {
   //     },
   //   },
   // });
-  const events = await getSports(sport.toUpperCase())
+  const events = await getSports(sport.toUpperCase());
 
   return (
     <div>
       <h1>SPORTS</h1>
-      {events.maps(event => (
+      {events.maps((event) => (
         <Event event={event} />
       ))}
     </div>
-  )
+  );
 }
