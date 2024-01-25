@@ -27,10 +27,16 @@ export default function Tickets() {
     <>
       <h1 className="my-4, p-4">Tickets</h1>
       {tickets?.map((ticket) => (
-        <Card key={ticket.id} className="p-3" style={{ width: "18rem" }}>
+        <Card
+          key={ticket.id}
+          className="m-3 p-3 bg-cyan-900 text-center"
+          style={{ width: "18rem" }}
+        >
           <Card.Body>
             <Ticket {...ticket} />
-            <Button variant="primary">Purchase Ticket</Button>
+            <Button variant="primary" className="float-center">
+              Purchase Ticket
+            </Button>
           </Card.Body>
         </Card>
       ))}
