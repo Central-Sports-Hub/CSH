@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import Ticket from "../../components/Ticket";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row } from "react-bootstrap";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -26,37 +26,39 @@ export default function Tickets() {
   return (
     <>
       <h1 className="my-4, p-4 text-center"> Available Tickets</h1>
-      {tickets?.map((ticket) => (
-        <Card
-          key={ticket.id}
-          className="m-3 p-3 bg-cyan-900 text-center"
-          style={{ width: "18rem" }}
-        >
-          <Card.Body>
-            <Ticket {...ticket} />
-            <Button
-              style={{
-                color: "gray",
-                textDecoration: "none",
-                cursor: "pointer",
-                display: "inline-block",
-                transition: "box-shadow 0.9s, transform 0.9s",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.boxShadow =
-                  "0 8px 16px rgba(255, 255, 255, 0.5)";
-                e.target.style.transform = "scale(1.1)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.boxShadow = "none";
-                e.target.style.transform = "scale(1)";
-              }}
-            >
-              Purchase Ticket
-            </Button>
-          </Card.Body>
-        </Card>
-      ))}
+      <Row xs={1} md={5} className="g-4">
+        {tickets?.map((ticket) => (
+          <Card
+            key={ticket.id}
+            className="m-3 p-3 bg-cyan-900 text-center"
+            style={{ width: "18rem" }}
+          >
+            <Card.Body>
+              <Ticket {...ticket} />
+              <Button
+                style={{
+                  color: "gray",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  display: "inline-block",
+                  transition: "box-shadow 0.9s, transform 0.9s",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.boxShadow =
+                    "0 8px 16px rgba(255, 255, 255, 0.5)";
+                  e.target.style.transform = "scale(1.1)";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.boxShadow = "none";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                Purchase Ticket
+              </Button>
+            </Card.Body>
+          </Card>
+        ))}
+      </Row>
     </>
   );
 }
