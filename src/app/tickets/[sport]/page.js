@@ -31,13 +31,13 @@ export default function Tickets() {
           <Card
             key={ticket.id}
             className="m-3 p-3 bg-cyan-900 text-center"
-            style={{ width: "18rem" }}
+            style={{ width: "18rem", color: "lightgrey" }}
           >
             <Card.Body>
               <Ticket {...ticket} />
               <Button
                 style={{
-                  color: "gray",
+                  color: "grey",
                   textDecoration: "none",
                   cursor: "pointer",
                   display: "inline-block",
