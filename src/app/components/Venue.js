@@ -1,15 +1,28 @@
-import Link from "next/link"
+import Link from "next/link";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
-export default function Venue({id, name, location, home_team, capacity, img_url}) {
+export default function Venue({
+  id,
+  name,
+  location,
+  home_team,
+  capacity,
+  img_url,
+}) {
   return (
-    <div className="row-span-3">
-      <Link href={`/venues/${id}`}>
-        <div className="text-blue-600 hover:text-orange-500">{name}</div>
-      </Link>
-
-      <div>{location}</div>
-      <div>{home_team}</div>
-      <div>{capacity}</div>
-    </div>
-  )
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src="default.svg" />
+      <Card.Body>
+        <Card.Title>
+          <Link href={`/venues/${id}`}>{name}</Link>
+        </Card.Title>
+        <Card.Text>
+          <div>Location: {location}</div>
+          <div>Home Team: {home_team}</div>
+          <div>Capacity: {capacity}</div>
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
 }
