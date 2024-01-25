@@ -16,9 +16,9 @@ export default function Venue({
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
-          <div>{location}</div>
-          <div>{home_team}</div>
-          <div>{capacity}</div>
+          <div>Location: {location}</div>
+          <div>Home Team: {home_team}</div>
+          <div>Capacity: {capacity}</div>
         </Card.Text>
       </Card.Body>
     </Card>
