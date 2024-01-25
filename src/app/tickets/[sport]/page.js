@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
-
 import Ticket from "../../components/Ticket";
+import { Card } from "react-bootstrap";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -25,14 +25,16 @@ export default function Tickets() {
 
   return (
     <>
-      <h1>Tickets</h1>
-      <div>
-        {tickets?.map((ticket) => (
-          <div>
-            <Ticket {...ticket} />
-            <br></br>
-          </div>
-        ))}
+      <h1 className="my-4">Tickets</h1>
+      <div className="card" style={{ width: "18rem" }}>
+        <div className="card-body">
+          {tickets?.map((ticket) => (
+            <div key={ticket.id}>
+              <Ticket {...ticket} />
+              <br></br>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
