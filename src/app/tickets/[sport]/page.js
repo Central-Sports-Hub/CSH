@@ -30,7 +30,7 @@ export default function Tickets() {
         <Card key={ticket.id} style={{ width: "18rem" }}>
           <Card.Body>
             <Ticket {...ticket} />
-            <Button>Purchase Ticket</Button>
+            <Button variant="primary">Purchase Ticket</Button>
           </Card.Body>
         </Card>
       ))}
