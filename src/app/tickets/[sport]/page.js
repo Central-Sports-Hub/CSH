@@ -26,16 +26,13 @@ export default function Tickets() {
   return (
     <>
       <h1 className="my-4">Tickets</h1>
-      <div className="card" style={{ width: "18rem" }}>
-        <div className="card-body">
-          {tickets?.map((ticket) => (
-            <div key={ticket.id}>
-              <Ticket {...ticket} />
-              <br></br>
-            </div>
-          ))}
-        </div>
-      </div>
+      {tickets?.map((ticket) => (
+        <Card key={ticket.id} style={{ width: "18rem" }}>
+          <Card.Body>
+            <Ticket {...ticket} />
+          </Card.Body>
+        </Card>
+      ))}
     </>
   );
 }
