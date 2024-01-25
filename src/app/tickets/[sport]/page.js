@@ -25,7 +25,7 @@ export default function Tickets() {
 
   return (
     <>
-      <h1 className="my-4, p-4">Tickets</h1>
+      <h1 className="my-4, p-4 text-center"> Available Tickets</h1>
       {tickets?.map((ticket) => (
         <Card
           key={ticket.id}
