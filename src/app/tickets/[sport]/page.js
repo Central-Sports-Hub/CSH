@@ -14,7 +14,7 @@ export default function Tickets() {
 
   // TODO: get tickets using sport
   const { data: tickets, isLoading } = useSWR(
-    `/api/ticket/sport/${sport}`,
+    `/api/tickets/sport/${sport}`,
     fetcher
   );
   console.log("tickets", tickets);
