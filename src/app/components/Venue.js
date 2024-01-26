@@ -10,12 +10,16 @@ export default function Venue({
   capacity,
   img_url,
 }) {
+  console.log("img_url", img_url);
   return (
     <Card
       style={{ width: "18rem", height: "23rem" }}
       className="mb-3 bg-black text-white"
     >
-      <Card.Img variant="top" src="default.svg" />
+      <Card.Img
+        variant="top"
+        src={`/pictures/${img_url || "ATTStadium.jpeg"}`}
+      />
       <Card.Body>
         <Card.Title className="text-center">
           <Link
