@@ -4,12 +4,14 @@ const prisma = new PrismaClient();
 
 // TODO: fix this route to all tickets for a sport
 export async function GET(request, { params }) {
-  const { sport } = params;
+
+  const sport = params.sport.toLowerCase();
+
   const tickets = await prisma.ticket.findMany({
     where: {
       event: {
         sport: {
-          equals: "football",
+          equals: sport,
           mode: "insensitive",
         },
       },
