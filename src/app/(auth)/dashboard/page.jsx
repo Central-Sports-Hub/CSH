@@ -25,6 +25,8 @@ const page = () => {
   }
 
   if (isSignedIn) {
+    console.log("user:", user);
+    const { firstName, lastName } = user;
     return (
       <div>
         <p>Full Name: {user.fullName}!</p>

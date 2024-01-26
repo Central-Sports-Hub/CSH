@@ -7,6 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+// import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 import { UserButton } from "@clerk/nextjs";
 
 // https://react-bootstrap.netlify.app/docs/components/navbar
@@ -14,7 +15,7 @@ function Navigation() {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/">CSH</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -42,12 +43,16 @@ function Navigation() {
             <Nav.Link as={Link} href="/venues">
               Venues
             </Nav.Link>
+            <Nav.Link as={Link} href="/cart">
+              CART
+              {/* <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> */}
+            </Nav.Link>
 
             <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search"
-                className="me-2"
+                className="me-2 float-right"
                 aria-label="Search"
               />
               <Button variant="outline-success">Search</Button>
