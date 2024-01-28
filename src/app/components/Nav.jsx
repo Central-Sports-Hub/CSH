@@ -7,10 +7,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 
-// https://react-bootstrap.netlify.app/docs/components/navbar
 function Navigation() {
+  const { isSignedIn } = useUser();
+
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
@@ -23,12 +24,20 @@ function Navigation() {
             navbarScroll
           >
             <UserButton />
-            <Nav.Link as={Link} href="/sign-in">
-              Login
-            </Nav.Link>
-            <Nav.Link as={Link} href="/sign-up">
-              Register
-            </Nav.Link>
+            {isSignedIn ? (
+              <Nav.Link as={Link} href="/dashboard">
+                Dashboard
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link as={Link} href="/sign-in">
+                  Login
+                </Nav.Link>
+                <Nav.Link as={Link} href="/sign-up">
+                  Register
+                </Nav.Link>
+              </>
+            )}
             <NavDropdown title="Tickets" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/tickets/football">
                 Football
