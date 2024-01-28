@@ -15,7 +15,7 @@ function Navigation() {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">CSH</Navbar.Brand>
+        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" className="justify-content-end">
           <Nav
@@ -52,6 +52,9 @@ function Navigation() {
               Venues
             </Nav.Link>
           </Nav>
+          <Nav.Link as={Link} href="/cart" className="me-5">
+            Cart
+          </Nav.Link>
           <Form className="d-flex">
             <Form.Control
               type="search"
