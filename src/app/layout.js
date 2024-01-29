@@ -3,7 +3,7 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "./components/Footer";
-import SecondaryNav from "./components/SecondaryNav";
+// import SecondaryNav from "./components/SecondaryNav";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           <Nav />
-          <SecondaryNav />
+          {/* <SecondaryNav /> */}
           {children}
           <Footer />
         </body>

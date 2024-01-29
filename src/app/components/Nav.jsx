@@ -8,6 +8,7 @@ import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { UserButton, useUser } from "@clerk/nextjs";
+// import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 
 function Navigation() {
   const { isSignedIn } = useUser();
@@ -59,7 +60,7 @@ function Navigation() {
             <Form.Control
               type="search"
               placeholder="Search"
-              className="me-2"
+              className="me-2 float-right"
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>

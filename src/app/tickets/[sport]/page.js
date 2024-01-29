@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import Ticket from "../../components/Ticket";
 import { Card, Button, Row } from "react-bootstrap";
+import { addTicketToCart } from "../../utils/ticket";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -37,6 +38,7 @@ export default function Tickets() {
             <Card.Body>
               <Ticket {...ticket} />
               <Button
+                onClick={() => addTicketToCart({ ticketId: ticket.id })}
                 style={{
                   color: "grey",
                   textDecoration: "none",
@@ -54,7 +56,7 @@ export default function Tickets() {
                   e.target.style.transform = "scale(1)";
                 }}
               >
-                Purchase Ticket
+                Add to Cart
               </Button>
             </Card.Body>
           </Card>
