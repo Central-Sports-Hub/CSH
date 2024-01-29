@@ -19,6 +19,11 @@ export default function Venue({
       <Card.Img
         variant="top"
         src={`/pictures/${img_url || "ATTStadium.jpeg"}`}
+        style={{
+          width: "100%",
+          height: "180px", // Adjust the height as needed
+          objectFit: "cover", // Ensures the image covers the specified dimensions without stretching
+        }}
       />
       <Card.Body>
         <Card.Title className="text-center">
