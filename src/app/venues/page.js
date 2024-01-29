@@ -9,6 +9,7 @@ import Venue from "../components/Venue";
 import Header from "./Header";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
 export default function Venues() {
   const { data: venues, isLoading } = useSWR("/api/venues", fetcher);
