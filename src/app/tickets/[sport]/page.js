@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useSWR } from "swr";
+import useSWR from "swr";
 import Ticket from "../../components/Ticket";
 import { Card, Button, Row } from "react-bootstrap";
 
@@ -9,6 +9,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Tickets() {
   // get sport from router
+  const { data, error, isLoading } = useSWR("/api/user", fetcher);
   const path = usePathname();
   const sport = path.split("/").slice(-1)[0];
 
