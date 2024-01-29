@@ -1,3 +1,5 @@
+"use client";
+
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import Link from "next/link";
@@ -11,25 +13,22 @@ export default function Event() {
     `/api/ticket/event/${eventId}`,
     fetcher
   );
+  console.log("tickets", tickets);
 
   return (
-    <ul>
+    <div>
       <h1>TICKETS</h1>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        tickets?.map((ticket) => (
-          <li key={ticket.id}>
-            <Link href={`/venues/${ticket.event.venue_id}`}>
-              Venue: {ticket.event.venue.name}
-            </Link>
-            <div>Date: {ticket.date} </div>
-            <div>Section: {ticket.section}</div>
-            <div>Row: {ticket.row}</div>
-            <div>Price: {ticket.price}</div>
-          </li>
-        ))
-      )}
-    </ul>
+      {tickets?.map((ticket) => (
+        <div key={ticket.id}>
+          <Link href={`/venues/${ticket.event.venue_id}`}>
+            Venue: {ticket.event.venue.name}
+          </Link>
+          <div>Date: {ticket.date} </div>
+          <div>Section: {ticket.section}</div>
+          <div>Row: {ticket.row}</div>
+          <div>Price: {ticket.price}</div>
+        </div>
+      ))}
+    </div>
   );
 }

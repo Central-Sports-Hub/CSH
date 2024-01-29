@@ -10,6 +10,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Tickets() {
   // get sport from router
+
   const path = usePathname();
   const sport = path.split("/").slice(-1)[0];
 
