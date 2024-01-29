@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import useSWR from "swr";
+import { useSWR } from "swr";
 import Ticket from "../../components/Ticket";
 import { Card, Button, Row } from "react-bootstrap";
 
