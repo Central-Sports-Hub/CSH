@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Link from "next/link";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
 export default function Event() {
   const path = usePathname();

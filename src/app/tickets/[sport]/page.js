@@ -6,10 +6,11 @@ import Ticket from "../../components/Ticket";
 import { Card, Button, Row } from "react-bootstrap";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
 export default function Tickets() {
   // get sport from router
-  const { data, error, isLoading } = useSWR("/api/user", fetcher);
+
   const path = usePathname();
   const sport = path.split("/").slice(-1)[0];
 
