@@ -8,7 +8,6 @@ import Venue from "../../components/Venue";
 import Event from "../../components/Event";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
-const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
 export default function Venues() {
   const path = usePathname();

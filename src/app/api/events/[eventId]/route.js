@@ -4,12 +4,12 @@ const prisma = new PrismaClient();
 
 // TODO: fix this route to all tickets for a sport
 export async function GET(request, { params }) {
-    const { eventId } = params;
-    const events = await prisma.event.findMany({
-        where: {
-            id: eventId,
-        },
-    });
+  const { eventId } = params;
+  const events = await prisma.event.findMany({
+    where: {
+      id: eventId,
+    },
+  });
 
-    return new Response(JSON.stringify(events));
+  return new Response(JSON.stringify(events));
 }
