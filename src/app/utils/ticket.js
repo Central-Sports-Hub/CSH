@@ -1,9 +1,18 @@
 async function addTicketToCart({ ticketId }) {
-  // add a users ticket to their cart
-  alert("TODO: add ticket to cart");
-  // TODO: get a way to identify a user
-  // TODO: send a request to submit the ticket
-  // TODO: triggers a refresh of the page somehow (?)
+  // add a user's ticket to their cart
+  try {
+    // TODO: get a way to identify a user
+    const userId = getCurrentUserId();
+
+    // TODO: send a request to submit the ticket
+    await submitTicketToCart(userId, ticketId);
+
+    // Trigger a refresh of the page somehow
+    window.location.reload();
+  } catch (error) {
+    console.error("Error adding ticket to cart:", error);
+    alert("Error adding ticket to cart. Please try again.");
+  }
 }
 
 async function checkoutCart() {
