@@ -39,6 +39,7 @@ export default function Tickets() {
               <Ticket {...ticket} />
               <AddToCartButton
                 ticket={ticket.id}
+                price={ticket.price}
                 style={{
                   color: "grey",
                   textDecoration: "none",
