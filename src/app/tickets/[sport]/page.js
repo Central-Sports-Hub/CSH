@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import Ticket from "../../components/Ticket";
-import { Card, Button, Row } from "react-bootstrap";
+import { Card, Row } from "react-bootstrap";
 import AddToCartButton from "@/app/components/AddToCartButton";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());

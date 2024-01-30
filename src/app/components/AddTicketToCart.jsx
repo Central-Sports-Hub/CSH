@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 import { useUser } from "@clerk/nextjs";
 import { addTicketToCart } from "../utils/ticket";
 
