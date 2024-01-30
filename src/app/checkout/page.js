@@ -16,10 +16,15 @@ const stripePromise = loadStripe(
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                }
+                },
+                body: JSON.stringify(data),
             });
             const jsonResponse = await response.json();
-            redirectUrl = jsonResponse.redirectUrl;
+            const redirectUrl = jsonResponse.redirectUrl;
+
+            // console.log(jsonResponse)
+            console.log(redirectUrl);
+
             window.location.assign(redirectUrl)
 
         } catch (err){

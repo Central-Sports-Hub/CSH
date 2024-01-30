@@ -18,7 +18,7 @@ export async function POST(req, { params }) {
     console.log('hi');
     console.log(session.url);
 
-    return new Response(JSON.stringify({redirectUrl:session.url}));    
+    return new Response(JSON.stringify({redirectUrl: session.url}));    
 
   } catch (err) {
     console.log(`error: ${err}`)
