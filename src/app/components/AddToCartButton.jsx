@@ -23,7 +23,7 @@ export default function AddToCartButton({ ticket, price }) {
 
   return (
     <button onClick={handleAddToCart} className="btn btn-primary">
-      Add to Cart
+      Add to Cart!
     </button>
   );
 }

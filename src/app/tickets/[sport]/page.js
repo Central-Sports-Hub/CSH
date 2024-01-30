@@ -56,9 +56,7 @@ export default function Tickets() {
                   e.target.style.boxShadow = "none";
                   e.target.style.transform = "scale(1)";
                 }}
-              >
-                Add to Cart
-              </AddToCartButton>
+              />
             </Card.Body>
           </Card>
         ))}

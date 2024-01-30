@@ -1,6 +1,6 @@
 import React from "react";
 //create form, onsubmit function to POST data to backend and db entry.
-const createProfile = () => {
+const CreateProfile = () => {
   return (
     <div className="text-zinc-900 font-medium px-2 text-center">
       createProfile
@@ -8,4 +8,4 @@ const createProfile = () => {
   );
 };
 
-export default createProfile;
+export default CreateProfile;
