@@ -4,7 +4,7 @@ import { useUser, useAuth } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const page = () => {
+const Page = () => {
   const { isSignedIn, user, isLoaded } = useUser();
   const { userId, getToken } = useAuth();
   const [userData, setUserData] = useState(null);
@@ -46,4 +46,4 @@ const page = () => {
   return <div>Not signed in</div>;
 };
 
-export default page;
+export default Page;
