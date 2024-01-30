@@ -65,6 +65,7 @@ model Venues {
   img_url   String
   comments  Comments[]
   event     Event[]
+  sport     String?
 }
 
 model Comments {
