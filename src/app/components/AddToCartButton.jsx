@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+//eslint-disable-next-line
 import { useUser } from "@clerk/nextjs";
 import TicketUtils from "../../utils/TicketUtils";
 
