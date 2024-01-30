@@ -3,13 +3,13 @@
 class TicketUtils {
   static cart = [];
 
-  static addToCart(ticket) {
+  static addToCart(ticket, price) {
     const existingItem = this.cart.find((item) => item.id === ticket.id);
 
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      this.cart.push({ ...ticket, quantity: 1 });
+      this.cart.push({ ...ticket, quantity: 1, price });
     }
 
     console.log("Updated Cart:", this.cart);

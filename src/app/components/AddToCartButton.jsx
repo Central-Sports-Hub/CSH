@@ -4,7 +4,7 @@ import React from "react";
 import { useUser } from "@clerk/nextjs";
 import TicketUtils from "../../utils/TicketUtils";
 
-export default function AddToCartButton({ ticket }) {
+export default function AddToCartButton({ ticket, price }) {
   const { user, isLoaded } = useUser();
 
   async function handleAddToCart() {
@@ -14,7 +14,7 @@ export default function AddToCartButton({ ticket }) {
     }
 
     try {
-      TicketUtils.addToCart(ticket);
+      TicketUtils.addToCart(ticket, price);
     } catch (error) {
       console.error("Error adding ticket to cart:", error);
       alert("Error adding ticket to cart. Please try again.");
