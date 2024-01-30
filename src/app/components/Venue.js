@@ -9,11 +9,12 @@ export default function Venue({
   home_team,
   capacity,
   img_url,
+  sport,
 }) {
   console.log("img_url", img_url);
   return (
     <Card
-      style={{ width: "18rem", height: "23rem" }}
+      style={{ width: "18rem", height: "26rem" }}
       className="mb-3 bg-black text-white"
     >
       <Card.Img
@@ -21,8 +22,8 @@ export default function Venue({
         src={`/pictures/${img_url || "ATTStadium.jpeg"}`}
         style={{
           width: "100%",
-          height: "180px", // Adjust the height as needed
-          objectFit: "cover", // Ensures the image covers the specified dimensions without stretching
+          height: "180px",
+          objectFit: "cover",
         }}
       />
       <Card.Body>
@@ -52,6 +53,21 @@ export default function Venue({
           <div>Location: {location}</div>
           <div>Home Team: {home_team}</div>
           <div>Capacity: {capacity}</div>
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              textAlign: "center",
+              marginBottom: "10px",
+            }}
+          >
+            <img
+              style={{ height: "50px" }}
+              src={sport && `/pictures/${sport}`}
+            />
+          </div>
         </Card.Text>
       </Card.Body>
     </Card>

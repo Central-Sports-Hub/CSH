@@ -13,6 +13,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Venues() {
   const { data: venues, isLoading } = useSWR("/api/venues", fetcher);
+  console.log(venues);
 
   if (isLoading) {
     return (
