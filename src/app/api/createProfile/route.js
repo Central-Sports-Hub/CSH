@@ -1,4 +1,4 @@
-import prismadb from "@/app/lib/prismadb";
+import prismadb from "@/lib/prismadb";
 
 export async function POST(request) {
   const createUser = async () => {
