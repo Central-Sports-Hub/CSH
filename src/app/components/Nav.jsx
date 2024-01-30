@@ -7,6 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+// eslint-disable-next-line
 import { UserButton, useUser } from "@clerk/nextjs";
 // import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 
