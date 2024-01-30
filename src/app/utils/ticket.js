@@ -1,11 +1,8 @@
-async function addTicketToCart({ ticketId }) {
+export async function addTicketToCart({ ticketId, user }) {
   // add a user's ticket to their cart
   try {
-    // TODO: get a way to identify a user
-    const userId = getCurrentUserId();
-
     // TODO: send a request to submit the ticket
-    await submitTicketToCart(userId, ticketId);
+    //await submitTicketToCart(user, ticketId);
 
     // Trigger a refresh of the page somehow
     window.location.reload();
@@ -15,9 +12,20 @@ async function addTicketToCart({ ticketId }) {
   }
 }
 
-async function checkoutCart() {
-  alert("TODO: checkout cart");
-  // TODO: figure out what happens when a user checks out?
-}
+// <AddTicketToCart ticketId={ticket.id} />;
 
-export { addTicketToCart, checkoutCart };
+export async function checkoutCart() {
+  try {
+    // TODO: get a way to identify a user
+    const { isSignedIn, user, isLoaded } = useUser();
+
+    // TODO: send a request to check out the cart
+    //await submitCartForCheckout(user);
+
+    // Trigger a refresh of the page somehow
+    window.location.reload();
+  } catch (error) {
+    console.error("Error checking out cart:", error);
+    alert("Error checking out cart. Please try again.");
+  }
+}

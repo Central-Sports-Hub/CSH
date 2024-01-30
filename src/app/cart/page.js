@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, ListGroup, Button } from "react-bootstrap";
 import { getCartItems, removeFromCart, checkoutCart } from "../utils/ticket";
 
-export default function CartPage() {
+export default function CartPage(cartItems) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
