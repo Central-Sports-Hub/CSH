@@ -1,22 +1,29 @@
-import { useUser } from "@clerk/nextjs";
-import { addTicketToCart } from "../utils/ticket";
+"use client";
 
-export default function AddTicketToCart({ ticketId }) {
+import React from "react";
+import { useUser } from "@clerk/nextjs";
+import TicketUtils from "../../utils/TicketUtils";
+
+export default function AddToCartButton({ ticket }) {
   const { user, isLoaded } = useUser();
 
-  async function handleAddTicketToCart() {
+  async function handleAddToCart() {
     if (!user || !isLoaded) {
       console.error("User not loaded or not signed in");
       return;
     }
 
     try {
-      await addTicketToCart({ ticketId, user });
+      TicketUtils.addToCart(ticket);
     } catch (error) {
       console.error("Error adding ticket to cart:", error);
       alert("Error adding ticket to cart. Please try again.");
     }
   }
 
-  return <button onClick={handleAddTicketToCart}>Add Ticket to Cart</button>;
+  return (
+    <button onClick={handleAddToCart} className="btn btn-primary">
+      Add to Cart
+    </button>
+  );
 }
