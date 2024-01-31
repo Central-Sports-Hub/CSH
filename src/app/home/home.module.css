@@ -8,3 +8,7 @@
   background-position: center;
   height:100vh;
 }
+.whiteText {
+  color: white;
+  text-align: center;
+}
