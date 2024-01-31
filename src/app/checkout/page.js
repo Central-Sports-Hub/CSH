@@ -6,10 +6,10 @@ const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   );
 
-  export default function PreviewPage() {
+  export default function PreviewPage({handleCheckout, cartItems}) {
 
     const handleClick = async () => {
- 
+ console.log("cart items:", cartItems)
         try{
 
             const response = await fetch("/api/cart/checkout", {
@@ -17,13 +17,14 @@ const stripePromise = loadStripe(
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({cartItems}),
             });
             const jsonResponse = await response.json();
             const redirectUrl = jsonResponse.redirectUrl;
 
             // console.log(jsonResponse)
             console.log(redirectUrl);
+            handleCheckout()
 
             window.location.assign(redirectUrl)
 

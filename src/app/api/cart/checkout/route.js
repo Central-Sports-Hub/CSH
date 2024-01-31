@@ -1,17 +1,28 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export async function POST(req, { params }) {
+  console.log("hello chris")
 
+// console.log("req",await req.json())
+const jsonRequest = await req.json()
+const cartItems = jsonRequest.cartItems
+console.log("cartItems", cartItems)
   try {
     // create checkout sessions from body params
     const session = await stripe.checkout.sessions.create({
-      line_items: [
-        {
-          price: 'price_1Oe8r8HqqFCjsPWYV4zYyxsS',
-          quantity: 1,
-        },
-      ],
+      payment_method_types: ["card"],
       mode: 'payment',
+      line_items: cartItems.map((item) => ({
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: `${item.event.team1} vs ${item.event.team2} @ section ${item.section} seat${item.seat} row${item.row}`
+          },
+          unit_amount: Math.ceil(item.price * 107.25)
+        },
+        // price: item.price * 100,
+        quantity: item.quantity
+      })),
       success_url: `http://localhost:3000/checkout`,
       cancel_url: `http://localhost:3000/checkout`,
     });

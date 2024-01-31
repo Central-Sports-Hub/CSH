@@ -5,7 +5,7 @@ class TicketUtils {
 
   static addToCart(ticket, price) {
     const existingItem = this.cart.find((item) => item.id === ticket.id);
-
+    console.log("tickettt", ticket.id)/* ticket.id does not exist, ticket is a number and not an object */
     if (existingItem) {
       existingItem.quantity += 1;
     } else {

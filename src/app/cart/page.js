@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, ListGroup, Button } from "react-bootstrap";
 import TicketUtils from "../../utils/TicketUtils";
+import CheckoutButton from "../checkout/page"
 
 export default function Page() {
   const [cartItems, setCartItems] = useState([]);
@@ -38,7 +39,7 @@ export default function Page() {
             <ListGroup variant="flush">
               {cartItems.map((item) => (
                 <ListGroup.Item key={item.id}>
-                  <Row>
+                  <Row >
                     <Col md={6}>{item.name}</Col>
                     <Col md={4}>${item.price}</Col>
                     <Col md={2}>
@@ -82,9 +83,10 @@ export default function Page() {
               </ListGroup.Item>
             </ListGroup>
           )}
-          <Button onClick={handleCheckout} className="mt-3">
+          {/* <Button onClick={handleCheckout} className="mt-3">
             Checkout
-          </Button>
+          </Button> */}
+          <CheckoutButton handleCheckout={handleCheckout} cartItems={cartItems}/>
         </Col>
       </Row>
     </Container>
