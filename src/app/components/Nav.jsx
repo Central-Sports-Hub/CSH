@@ -15,7 +15,7 @@ function Navigation() {
   const { isSignedIn } = useUser();
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="black" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">CSH</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
