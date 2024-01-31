@@ -7,13 +7,13 @@ import Container from "react-bootstrap/Container";
 
 import Venue from "../components/Venue";
 import Header from "./Header";
+import Sport from "./Sport";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 // const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
 export default function Venues() {
   const { data: venues, isLoading } = useSWR("/api/venues", fetcher);
-  console.log(venues);
 
   if (isLoading) {
     return (
@@ -23,17 +23,22 @@ export default function Venues() {
     );
   }
 
+  console.log(venues);
+  const nfl = venues.filter((venue) => venue.sport === "NFLLogoBlack.jpeg");
+  const mlb = venues.filter((venue) => venue.sport == "MLBNew.jpeg");
+  const nhl = venues.filter((venue) => venue.sport === "NHL.jpeg");
+  const nba = venues.filter((venue) => venue.sport === "NBALogo.jpeg");
+  const mls = venues.filter((venue) => venue.sport === "MLS.jpeg");
+
   return (
     <>
-      <Header></Header>
+      <Header />
       <Container>
-        <Row>
-          {venues.map((venue) => (
-            <Col xs={3} key={venue.id} className="row-span-3">
-              <Venue {...venue} />
-            </Col>
-          ))}
-        </Row>
+        <Sport sport="NFL" venues={nfl} />
+        <Sport sport="MLB" venues={mlb} />
+        <Sport sport="NHL" venues={nhl} />
+        <Sport sport="NBA" venues={nba} />
+        <Sport sport="MLS" venues={mls} />
       </Container>
     </>
   );

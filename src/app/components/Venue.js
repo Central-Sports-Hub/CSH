@@ -11,11 +11,10 @@ export default function Venue({
   img_url,
   sport,
 }) {
-  console.log("img_url", img_url);
   return (
     <Card
       style={{ width: "18rem", height: "26rem" }}
-      className="mb-3 bg-black text-white"
+      className="mb-3 bg-black text-white align-items-center"
     >
       <Card.Img
         variant="top"
@@ -49,25 +48,20 @@ export default function Venue({
             {name}
           </Link>
         </Card.Title>
-        <Card.Text>
-          <div>Location: {location}</div>
-          <div>Home Team: {home_team}</div>
-          <div>Capacity: {capacity}</div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              textAlign: "center",
-              marginBottom: "10px",
-            }}
-          >
-            <img
-              style={{ height: "50px" }}
-              src={sport && `/pictures/${sport}`}
-            />
-          </div>
+        <Card.Text className="mb-0">Location: {location}</Card.Text>
+        <Card.Text className="mb-0">Home Team: {home_team}</Card.Text>
+        <Card.Text className="mb-0">Capacity: {capacity}</Card.Text>
+        <Card.Text
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            textAlign: "center",
+            marginBottom: "10px",
+          }}
+        >
+          <img style={{ height: "50px" }} src={sport && `/pictures/${sport}`} />
         </Card.Text>
       </Card.Body>
     </Card>

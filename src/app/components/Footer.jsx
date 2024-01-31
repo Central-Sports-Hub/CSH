@@ -2,8 +2,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-gray-500 dark:bg-gray-900 rounded-lg">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"></div>
+    <footer className="bg-black text-light py-3">
+      <div className="container d-flex align-items-center justify-content-center">
+        <div>
+          <p>&copy; 2024 All rights reserved. Central Sports Hub.</p>
+        </div>
+      </div>
     </footer>
   );
 };
