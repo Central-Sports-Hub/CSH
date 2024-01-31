@@ -54,7 +54,12 @@ function Navigation() {
               Venues
             </Nav.Link>
           </Nav>
-          <Nav.Link as={Link} href="/cart" className="me-5">
+          <Nav.Link
+            as={Link}
+            href="/cart"
+            className="me-5"
+            style={{ color: "gray" }}
+          >
             Cart
           </Nav.Link>
           <Form className="d-flex">

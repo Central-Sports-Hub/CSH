@@ -27,11 +27,13 @@ const Page = () => {
   if (isSignedIn) {
     console.log("user:", user);
     const { firstName, lastName } = user;
+    const userIdMasked = "*****" + userId.slice(-5); // Mask the userId
+
     return (
       <div>
         <p>Full Name: {user.fullName}!</p>
         <p>Email: {user.emailAddresses[0].emailAddress}</p>
-        <p>UserID: {userId}</p>
+        <p>UserID: {userIdMasked}</p> {/* Display masked userId */}
         {userData && (
           <div>
             <p>Data from backend API:</p>
