@@ -8,14 +8,16 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
+
 // import { useSearchParams } from "next/navigation";
 // import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 
 function Navigation() {
   const { isSignedIn } = useUser();
   const [searchQuery, setSearchQuery] = useState("");
+  const { push } = useRouter();
 
   return (
     <Navbar bg="black" data-bs-theme="dark">
@@ -72,7 +74,7 @@ function Navigation() {
               />
               <Button
                 variant="outline-success"
-                onClick={() => redirect(`/search?query=${searchQuery}`)}
+                onClick={() => push(`/search?query=${searchQuery}`)}
               >
                 Search
               </Button>
