@@ -38,7 +38,7 @@ export default function Tickets() {
             <Card.Body>
               <Ticket {...ticket} />
               <AddToCartButton
-                ticket={ticket.id}
+                ticket={ticket} /* need the prop to access the whole ticket not just the id*/
                 price={ticket.price}
                 style={{
                   color: "grey",
