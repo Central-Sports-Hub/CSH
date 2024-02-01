@@ -6,18 +6,36 @@ import Container from "react-bootstrap/Container";
 
 import Venue from "../components/Venue";
 
-export default function Sport({ sport, venues }) {
+export default function Sport({ sport, venues, logoSrc }) {
   const [hidden, setHidden] = useState(true);
   console.log("hidden:", hidden);
 
   return (
-    <Container>
+    <Container
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        marginBottom: "60px",
+        marginTop: "20px",
+      }}
+    >
       <Row>
         <h1
           className="mt-8 mb-8 text-center"
-          style={{ fontSize: "20pt", color: "white" }}
+          style={{ fontSize: "20pt", color: "gray" }}
         >
-          <div onClick={() => setHidden(!hidden)}>{sport}</div>
+          <div onClick={() => setHidden(!hidden)} onMouseOver={""}>
+            <img
+              src={`/pictures/${logoSrc}`}
+              style={{
+                marginRight: "8px",
+                verticalAlign: "middle",
+                width: "50px",
+                height: "50px",
+              }}
+            />
+            {sport}
+          </div>
         </h1>
       </Row>
       <Row>

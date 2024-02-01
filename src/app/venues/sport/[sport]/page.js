@@ -33,11 +33,10 @@ export default function Venues() {
   let venues;
   let x;
   switch (selectedSport) {
-    case "NFL":
+    case "NFLLL":
       venues = nfl;
       break;
     case "MLB":
-      console.log("MLB?");
       venues = mlb;
       break;
     case "NHL":
@@ -50,7 +49,7 @@ export default function Venues() {
       venues = mls;
       break;
     default:
-      redirect("/venues/sport/NFL");
+      redirect("/venues");
     // selectedSport = "NFL";
     // venues = nfl;
   }
