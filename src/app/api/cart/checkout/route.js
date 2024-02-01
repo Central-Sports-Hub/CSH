@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
+// const base url = some ternary / verce/ localhost
 export async function POST(req, { params }) {
   console.log("hello chris")
 
@@ -23,8 +23,10 @@ console.log("cartItems", cartItems)
         // price: item.price * 100,
         quantity: item.quantity
       })),
-      success_url: `http://localhost:3000/checkout`,
-      cancel_url: `http://localhost:3000/checkout`,
+      success_url: `http://localhost:3000/checkout/success`,
+      // new page showing success of purchase
+      cancel_url: `http://localhost:3000/tickets`,
+      // back to ticket page for them to buy again
     });
     console.log('hi');
     console.log(session.url);
