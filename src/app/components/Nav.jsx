@@ -13,6 +13,7 @@ import { UserButton, useUser } from "@clerk/nextjs";
 
 function Navigation() {
   const { isSignedIn } = useUser();
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <Navbar bg="black" data-bs-theme="dark">
@@ -63,6 +64,8 @@ function Navigation() {
               placeholder="Search"
               className="me-2 float-right"
               aria-label="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <Button variant="outline-success">Search</Button>
           </Form>
