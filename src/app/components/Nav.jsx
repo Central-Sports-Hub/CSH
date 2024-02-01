@@ -58,17 +58,26 @@ function Navigation() {
           <Nav.Link as={Link} href="/cart" className="me-5">
             Cart
           </Nav.Link>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2 float-right"
-              aria-label="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <div>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2 float-right"
+                aria-label="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form>
+            <ul>
+              {filteredData.map((item) => (
+                <li>
+                  key={item.id}>{item.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
