@@ -7,7 +7,7 @@
     "build": "prisma generate && prisma migrate && next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "npx prisma migrate reset && node src/app/db/seed.js"
+    "seed": "npx prisma migrate reset && node src/db/seed.js"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.3",
