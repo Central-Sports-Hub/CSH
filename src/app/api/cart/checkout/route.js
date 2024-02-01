@@ -25,7 +25,7 @@ console.log("cartItems", cartItems)
       })),
       success_url: `http://localhost:3000/checkout/success`,
       // new page showing success of purchase
-      cancel_url: `http://localhost:3000/tickets`,
+      cancel_url: `http://localhost:3000/tickets/all_tickets`,
       // back to ticket page for them to buy again
     });
     console.log('hi');
