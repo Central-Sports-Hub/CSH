@@ -9,5 +9,5 @@ export default function SearchBar() {
 
   // URL -> `/dashboard?search=my-project`
   // `search` -> 'my-project'
-  return <>Search: {search}</>;
+  return <>CSH Results: {search}</>;
 }

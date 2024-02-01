@@ -63,7 +63,13 @@ function Navigation() {
             Cart
           </Nav.Link>
           <div>
-            <Form className="d-flex">
+            <Form
+              className="d-flex"
+              onSubmit={(e) => {
+                e.preventDefault();
+                push(`/search?query=${searchQuery}`);
+              }}
+            >
               <Form.Control
                 type="search"
                 placeholder="Search"
