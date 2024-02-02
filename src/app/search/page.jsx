@@ -7,7 +7,14 @@ export default function SearchBar() {
 
   const search = searchParams.get("query");
 
-  // URL -> `/dashboard?search=my-project`
+  // URL -> `/app/venue`
   // `search` -> 'my-project'
-  return <>CSH Results: {search}</>;
+  return (
+    <>
+      <div className="venue_card">
+        <h1>CSH Results: {search}</h1>
+        <p>Name: {""}</p>
+      </div>
+    </>
+  );
 }
