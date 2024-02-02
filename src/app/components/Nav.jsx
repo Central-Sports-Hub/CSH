@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,12 +8,16 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// eslint-disable-next-line
+import { useRouter } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
+
+// import { useSearchParams } from "next/navigation";
 // import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 
 function Navigation() {
   const { isSignedIn } = useUser();
+  const [searchQuery, setSearchQuery] = useState("");
+  const { push } = useRouter();
 
   return (
     <Navbar bg="black" data-bs-theme="dark">
@@ -65,15 +70,35 @@ function Navigation() {
           >
             Cart
           </Nav.Link>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2 float-right"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <div>
+            <Form
+              className="d-flex"
+              onSubmit={(e) => {
+                e.preventDefault();
+                push(`/search?query=${searchQuery}`);
+              }}
+            >
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2 float-right"
+                aria-label="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Button
+                variant="outline-success"
+                onClick={() => push(`/search?query=${searchQuery}`)}
+              >
+                Search
+              </Button>
+            </Form>
+            <ul>
+              {/* {filteredData.map((item) => (
+                <li key={item.id}>{item.name}</li>
+              ))} */}
+            </ul>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
