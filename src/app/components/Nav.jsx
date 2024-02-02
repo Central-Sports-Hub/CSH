@@ -41,10 +41,13 @@ function Navigation() {
               </>
             )}
             <NavDropdown title="Tickets" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/tickets/football">
-                Football
-              </NavDropdown.Item>
+
+              <NavDropdown.Item href="/tickets/all_tickets">All Sports</NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/basketball">Basketball</NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/football">Football</NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/hockey">Hockey</NavDropdown.Item>
               <NavDropdown.Item href="/tickets/soccer">Soccer</NavDropdown.Item>
+
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
                 Something else here
