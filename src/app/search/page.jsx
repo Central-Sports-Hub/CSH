@@ -1,20 +1,29 @@
 "use client";
-
+import useSWR from "swr";
 import { useSearchParams } from "next/navigation";
+import Sport from "../venues/Sport";
+import Header from "../venues/Header";
+import Container from "react-bootstrap/Container";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function SearchBar() {
   const searchParams = useSearchParams();
-
   const search = searchParams.get("query");
+  const { data: venues, isLoading } = useSWR(
+    `/api/venues/search?search=${search}`,
+    fetcher
+  );
+  console.log("venues", venues);
 
-  // URL -> `/app/venue`
+  // URL -> `/`
   // `search` -> 'my-project'
   return (
     <>
-      <div className="venue_card">
-        <h1>CSH Results: {search}</h1>
-        <p>Name: {""}</p>
-      </div>
+      <Header />
+      <Container>
+        <Sport sport={"CSH Results"} venues={venues} />
+      </Container>
     </>
   );
 }

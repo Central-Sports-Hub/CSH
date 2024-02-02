@@ -2,8 +2,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function GET(request) {
-  const { search } = request.query;
+export async function GET(request, obj) {
+  console.log("obj", request.nextUrl.searchParams);
+  const search = request.nextUrl.searchParams.get("search");
+  console.log("search", search);
 
   const venues = await prisma.venues.findMany({
     where: {
