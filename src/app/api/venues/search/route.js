@@ -7,7 +7,7 @@ export async function GET(request) {
 
   const venues = await prisma.venues.findMany({
     where: {
-      AND: [
+      OR: [
         {
           name: {
             contains: search || "",
