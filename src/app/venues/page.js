@@ -37,7 +37,7 @@ export default function Venues() {
         style={{
           display: "flex",
           flexDirection: "column",
-          marginTop: "50px",
+          marginTop: "100px",
           border: "3px solid gray",
           boxShadow: "0 20px 20px 10px rgba(1,1,1,1)",
           height: "100%",
