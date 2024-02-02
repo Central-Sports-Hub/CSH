@@ -43,6 +43,7 @@ function Navigation() {
             <NavDropdown title="Tickets" id="navbarScrollingDropdown">
 
               <NavDropdown.Item href="/tickets/all_tickets">All Sports</NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/baseball">Baseball</NavDropdown.Item>
               <NavDropdown.Item href="/tickets/basketball">Basketball</NavDropdown.Item>
               <NavDropdown.Item href="/tickets/football">Football</NavDropdown.Item>
               <NavDropdown.Item href="/tickets/hockey">Hockey</NavDropdown.Item>
