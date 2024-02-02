@@ -15,8 +15,9 @@ export default function Sport({ sport, venues, logoSrc }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        marginBottom: "60px",
+        marginBottom: "10px",
         marginTop: "20px",
+        paddingBottom: "15px",
       }}
     >
       <Row>
