@@ -16,13 +16,15 @@ export default function SearchBar() {
   );
   console.log("venues", venues);
 
+  if (isLoading) return <div>Loading...</div>;
+
   // URL -> `/`
   // `search` -> 'my-project'
   return (
     <>
       <Header />
       <Container>
-        <Sport sport={"CSH Results"} venues={venues} />
+        <Sport sport={"CSH Results"} venues={venues} startHidden={false} />
       </Container>
     </>
   );
