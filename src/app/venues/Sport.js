@@ -3,7 +3,6 @@ import { useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import Venue from "../components/Venue";
 
 export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
