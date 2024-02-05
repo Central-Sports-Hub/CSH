@@ -55,7 +55,7 @@ export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
         style={{
           height: hidden ? "0" : "100%",
           transform: `scaleY(${hidden ? 0 : 1})`,
-          transition: "1s ease-in-out",
+          transition: ".6s ease-in-out",
           overflow: "hidden",
         }}
       >
