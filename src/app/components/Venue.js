@@ -23,6 +23,7 @@ export default function Venue({
           width: "100%",
           height: "180px",
           objectFit: "cover",
+          border: "2px solid gray",
         }}
       />
       <Card.Body>
