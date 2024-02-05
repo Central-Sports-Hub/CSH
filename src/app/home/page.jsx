@@ -1,5 +1,6 @@
 import Home from "@/app/components/Home";
 import React from "react";
+import Link from "next/link";
 
 <main className={styles.main - container}>
   <h1 className="text-zinc-900 font-medium px-2 text-center">
