@@ -18,7 +18,7 @@ export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
         flexDirection: "column",
         marginBottom: "10px",
         marginTop: "20px",
-        paddingBottom: "15px",
+        paddingBottom: "0px",
       }}
     >
       <Row>
