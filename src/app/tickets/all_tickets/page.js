@@ -30,11 +30,17 @@ export default function Tickets() {
           border: "3px solid gray",
           boxShadow: "0 20px 20px 10px rgba(1,1,1,1)",
           minHeight: "100%",
+          paddingBottom: "3%",
         }}
       >
         <Row xs={1} md={5} className="g-4 mt-5">
           {tickets?.map((ticket) => (
-            <Col xs={3} key={ticket.id} className="row-span-3">
+            <Col
+              xs={3}
+              key={ticket.id}
+              className="row-span-3"
+              style={{ paddingBottom: "10px" }}
+            >
               <Ticket {...ticket} />
             </Col>
           ))}

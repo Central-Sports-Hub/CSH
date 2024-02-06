@@ -11,7 +11,7 @@ export default function Ticket(ticket) {
   return (
     <Card
       className="m-1 bg-dark bg-gradient text-white align-items-center"
-      style={{ minHeight: "100%" }}
+      style={{ minHeight: "100%", paddingBottom: "10px" }}
     >
       <Card.Img
         variant="top"
