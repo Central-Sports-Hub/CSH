@@ -7,7 +7,7 @@ export async function GET(request, { params }) {
   const { eventId } = params;
   const events = await prisma.event.findMany({
     where: {
-      id: eventId,
+      id: parseInt(eventId),
     },
   });
 

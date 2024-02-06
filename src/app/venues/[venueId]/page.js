@@ -6,6 +6,7 @@ import useSWR from "swr";
 import Header from "../Header";
 import Venue from "../../components/Venue";
 import Event from "../../components/Event";
+import Comment from "@/app/components/Comment";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -17,6 +18,7 @@ export default function Venues() {
     `/api/events/venue/${venueId}`,
     fetcher
   );
+  const { data:comment } = useSWR(`/api/venues/comments/${venueId}`, fetcher);
   console.log(events);
   if (isLoading) {
     return (
@@ -35,6 +37,12 @@ export default function Venues() {
           <div className="grid grid-cols-2 items-center">
             {events?.map((event) => (
               <Event key={event.id} {...event} />
+            ))}
+          </div>
+          <h1>COMMENTS:</h1>
+          <div>
+            {comment?.map((comment) => (
+              <Comment key={comment.id} {...comment} />
             ))}
           </div>
         </div>
