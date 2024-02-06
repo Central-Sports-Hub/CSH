@@ -26,8 +26,19 @@ export default function Tickets() {
   }
 
   return (
-    <Container style={{ paddingBottom: "100px" }}>
-      <h1 className="my-4, p-4 text-center"> Available Tickets</h1>
+    <Container
+      style={{
+        marginTop: "43px",
+        border: "3px solid gray",
+        boxShadow: "0 20px 20px 10px rgba(1,1,1,1)",
+        minHeight: "100%",
+        paddingBottom: "100px",
+      }}
+    >
+      <h1 className="my-4, p-4 text-center" style={{ color: "white" }}>
+        {" "}
+        Available Tickets
+      </h1>
       <Row xs={1} md={5} className="g-4">
         {tickets?.map((ticket) => (
           <Col xs={3} key={ticket.id} className="row-span-3 mb-3">

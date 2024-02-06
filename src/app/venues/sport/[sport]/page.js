@@ -33,7 +33,7 @@ export default function Venues() {
   let venues;
   let x;
   switch (selectedSport) {
-    case "NFLLL":
+    case "NFL":
       venues = nfl;
       break;
     case "MLB":
