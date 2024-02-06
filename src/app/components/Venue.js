@@ -14,7 +14,7 @@ export default function Venue({
   return (
     <Card
       style={{ width: "18rem", height: "26rem" }}
-      className="mb-3 bg-black text-white align-items-center"
+      className="mb-3 bg-dark bg-gradient text-white align-items-center"
     >
       <Card.Img
         variant="top"

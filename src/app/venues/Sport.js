@@ -3,6 +3,7 @@ import { useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+
 import Venue from "../components/Venue";
 
 export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
@@ -17,7 +18,6 @@ export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
         flexDirection: "column",
         marginBottom: "10px",
         marginTop: "20px",
-        paddingBottom: "0px",
       }}
     >
       <Row>

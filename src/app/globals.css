@@ -27,3 +27,39 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.g-4 {
+  --bs-gutter-y: 0rem;
+}
+
+/* Button Styles */
+.btn.btn-success {
+  color: #198754;
+  background-color: #000000;
+  border-color: #198754;
+}
+.btn.btn-success:hover {
+  color: #ffffff;
+  background-color: #198754;
+  outline: none;
+  box-shadow: none;
+}
+.btn.btn-success.active,
+.btn.btn-success:active {
+  color: #fff;
+  background-color: #323338;
+  border-color: #000000;
+  outline: none;
+}
+.btn.btn-success.active.focus,
+.btn.btn-success.active:focus,
+.btn.btn-success.active:hover,
+.btn.btn-success:active.focus,
+.btn.btn-success:active:focus,
+.btn.btn-success:active:hover {
+  color: #fff;
+  background-color: #e9f0e9;
+  border-color: #000000;
+  outline: none;
+  box-shadow: none;
+}

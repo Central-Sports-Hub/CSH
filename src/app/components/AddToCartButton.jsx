@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 //eslint-disable-next-line
 import { useUser } from "@clerk/nextjs";
-import TicketUtils from "../../utils/TicketUtils";
+import { Row } from "react-bootstrap";
+import { CartContext } from "../providers";
 
 export default function AddToCartButton({ ticket, price }) {
   const { user, isLoaded } = useUser();
+  const { addToCart } = useContext(CartContext);
 
   async function handleAddToCart() {
     if (!user || !isLoaded) {
@@ -15,7 +17,7 @@ export default function AddToCartButton({ ticket, price }) {
     }
 
     try {
-      TicketUtils.addToCart(ticket, price);
+      addToCart(ticket, price);
     } catch (error) {
       console.error("Error adding ticket to cart:", error);
       alert("Error adding ticket to cart. Please try again.");
@@ -23,8 +25,10 @@ export default function AddToCartButton({ ticket, price }) {
   }
 
   return (
-    <button onClick={handleAddToCart} className="btn btn-primary">
-      Add to Cart!
-    </button>
+    <Row style={{ margin: "16px" }}>
+      <button onClick={handleAddToCart} className="btn btn-success">
+        Add to Cart!
+      </button>
+    </Row>
   );
 }
