@@ -2115,24 +2115,45 @@ const createComment = async () => {
   console.log("creating comment");
 
   await prisma.comments.createMany({
-    data: [
-      {
-        venue_id: 1,
-        user_id: 1,
-        comment_text: "This stadium doo doo",
-        created_at: new Date(),
-        category: "stadium",
-      },
-      {
-        venue_id: 2,
-        user_id: 2,
-        comment_text: "This stadium Boo Boo",
-        created_at: new Date(),
-        category: "stadium",
-      },
-    ],
+    data: commentsData
   });
 };
+
+const commentsData = []
+
+for (let i = 1; i <= 100; i++) {
+  commentsData.push({
+    venue_id: i,
+    user_id: 1,
+    comment_text: "This stadium doo doo",
+    created_at: new Date(),
+    category: "stadium",
+  }, 
+  {
+    venue_id: i,
+    user_id: 2,
+    comment_text: "Great stadium!!!!",
+    created_at: new Date(),
+    category: "stadium",
+  },
+  {
+    venue_id: i,
+    user_id: 3,
+    comment_text: "Terrible Seats, i had to stand the whole time because my seat broke",
+    created_at: new Date(),
+    category: "stadium",
+  },
+  {
+    venue_id: i,
+    user_id: 4,
+    comment_text: "I DONT CARE ABOUT THESE SEATS, COWBOYS SUPERBOWL 2024",
+    created_at: new Date(),
+    category: "stadium",
+  },
+  );
+}
+
+
 
 const main = async () => {
   console.log("seeding the database");
@@ -2142,7 +2163,7 @@ const main = async () => {
   await createEvent();
   await createTicket();
   await createOrder();
-  await createComment();
+  await createComment(commentsData);
 };
 
 main()
