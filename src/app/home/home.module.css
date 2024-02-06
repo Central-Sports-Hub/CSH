@@ -3,12 +3,19 @@
   background-color: #f5f5f5;
 }
 .background {
-  background-image: url('../../props/baseball_bw.jpeg');
+  background-image: url("../../props/baseball_bw.jpeg");
   background-size: cover;
   background-position: center;
-  height:100vh;
+  height: 86vh;
 }
 .whiteText {
+  display: flex;
+  justify-content: center;
   color: white;
   text-align: center;
+  padding-top: 50px;
+  font-size: 7vh;
+  font-family: copperplate, fantasy;
+  text-shadow: 6px 6px 12px #000000;
+  text-decoration-line: overline;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,6 +10,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useRouter } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
+import { CartContext } from "../providers";
 
 // import { useSearchParams } from "next/navigation";
 // import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
@@ -18,6 +19,7 @@ function Navigation() {
   const { isSignedIn } = useUser();
   const [searchQuery, setSearchQuery] = useState("");
   const { push } = useRouter();
+  const { cart } = useContext(CartContext);
 
   return (
     <Navbar bg="black" data-bs-theme="dark">
@@ -46,11 +48,18 @@ function Navigation() {
               </>
             )}
             <NavDropdown title="Tickets" id="navbarScrollingDropdown">
-
-              <NavDropdown.Item href="/tickets/all_tickets">All Sports</NavDropdown.Item>
-              <NavDropdown.Item href="/tickets/baseball">Baseball</NavDropdown.Item>
-              <NavDropdown.Item href="/tickets/basketball">Basketball</NavDropdown.Item>
-              <NavDropdown.Item href="/tickets/football">Football</NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/all_tickets">
+                All Sports
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/baseball">
+                Baseball
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/basketball">
+                Basketball
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/tickets/football">
+                Football
+              </NavDropdown.Item>
               <NavDropdown.Item href="/tickets/hockey">Hockey</NavDropdown.Item>
               <NavDropdown.Item href="/tickets/soccer">Soccer</NavDropdown.Item>
 
@@ -67,39 +76,37 @@ function Navigation() {
             as={Link}
             href="/cart"
             className="me-5"
-            style={{ color: "gray" }}
+            style={{ color: "gray", fontWeight: "500" }}
           >
-            Cart
+            Cart ({cart.length})
           </Nav.Link>
-          <div>
-            <Form
-              className="d-flex"
-              onSubmit={(e) => {
-                e.preventDefault();
-                push(`/search?query=${searchQuery}`);
-              }}
+          <Form
+            className="d-flex"
+            onSubmit={(e) => {
+              e.preventDefault();
+              push(`/search?query=${searchQuery}`);
+            }}
+          >
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2 float-right"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Button
+              variant="outline-success"
+              onClick={() => push(`/search?query=${searchQuery}`)}
             >
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2 float-right"
-                aria-label="Search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <Button
-                variant="outline-success"
-                onClick={() => push(`/search?query=${searchQuery}`)}
-              >
-                Search
-              </Button>
-            </Form>
-            <ul>
-              {/* {filteredData.map((item) => (
+              Search
+            </Button>
+          </Form>
+          <ul>
+            {/* {filteredData.map((item) => (
                 <li key={item.id}>{item.name}</li>
               ))} */}
-            </ul>
-          </div>
+          </ul>
         </Navbar.Collapse>
       </Container>
     </Navbar>
