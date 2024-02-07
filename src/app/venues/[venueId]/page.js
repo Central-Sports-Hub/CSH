@@ -18,7 +18,7 @@ export default function Venues() {
     `/api/events/venue/${venueId}`,
     fetcher
   );
-  const { data:comment } = useSWR(`/api/venues/comments/${venueId}`, fetcher);
+  const { data: comment } = useSWR(`/api/venues/comments/${venueId}`, fetcher);
   console.log(events);
   if (isLoading) {
     return (
@@ -30,17 +30,39 @@ export default function Venues() {
 
   return (
     <Header>
-      <div className="grid grid-cols-2 items-center">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginTop: "43px",
+          boxShadow: "0 20px 20px 10px rgba(1,1,1,1)",
+          minHeight: "100%",
+          background: "rgb(88, 88, 88)",
+          color: "white",
+          maxWidth: "75%",
+          border: "3px solid grey",
+          paddingLeft: "20px",
+          paddingTop: "20px",
+          marginLeft: "13%",
+        }}
+      >
         <Venue {...venue} />
         <div>
-          <h1> EVENTS:</h1>
-          <div className="grid grid-cols-2 items-center">
+          <h1 style={{ color: "white", textDecoration: "underline" }}>
+            {" "}
+            EVENTS:
+          </h1>
+          <div>
             {events?.map((event) => (
               <Event key={event.id} {...event} />
             ))}
           </div>
-          <h1>COMMENTS:</h1>
-          <div>
+          <h1 style={{ color: "white", textDecoration: "underline" }}>
+            COMMENTS:
+          </h1>
+          <div style={{ paddingBottom: "40px" }}>
             {comment?.map((comment) => (
               <Comment key={comment.id} {...comment} />
             ))}

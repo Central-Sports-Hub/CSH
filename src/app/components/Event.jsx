@@ -9,12 +9,23 @@ export default function Event({
   venue_id,
 }) {
   return (
-    <div className="col-span-1">
-      <Link href={`../events/${id}`}>
-        <div className="card bg-base-100 shadow-xl">
-          <div className="card-body">
+    <div
+      style={{
+        backgroundColor: "rgb(88, 88, 88)",
+        border: "3px solid grey",
+        width: "50%",
+        marginBottom: "30px",
+        paddingLeft: "10px",
+      }}
+    >
+      <Link
+        href={`../events/${id}`}
+        style={{ color: "white", textDecoration: "none" }}
+      >
+        <div>
+          <div>
             <div>{sport}</div>
-            <div className="text-blue-600 hover:text-orange-500">
+            <div>
               {team1} vs {team2}
             </div>
             <div>{start_time}</div>
