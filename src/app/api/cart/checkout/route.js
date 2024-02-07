@@ -21,7 +21,7 @@ export async function POST(req, { params }) {
           unit_amount: Math.ceil(item.price * 107.25),
         },
         // price: item.price * 100,
-        quantity: item.quantity,
+        quantity: 1
       })),
       success_url: `http://localhost:3000/checkout/success`,
       // new page showing success of purchase
