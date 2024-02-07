@@ -12,9 +12,6 @@ import { useRouter } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { CartContext } from "../providers";
 
-// import { useSearchParams } from "next/navigation";
-// import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
-
 function Navigation() {
   const { isSignedIn } = useUser();
   const [searchQuery, setSearchQuery] = useState("");
