@@ -2,6 +2,7 @@
 import { useUser, useAuth } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 
 const Page = () => {
   const { isSignedIn, user, isLoaded } = useUser();
@@ -30,17 +31,41 @@ const Page = () => {
     const userIdMasked = "*****" + userId.slice(-5); // Mask the userId
 
     return (
-      <div>
-        <p>Full Name: {user.fullName}!</p>
-        <p>Email: {user.emailAddresses[0].emailAddress}</p>
-        <p>UserID: {userIdMasked}</p> {/* Display masked userId */}
+      <Container
+        style={{
+          marginTop: "43px",
+          boxShadow: "0 20px 20px 10px rgba(1,1,1,1)",
+          minHeight: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: "column",
+          fontSize: "1.5rem",
+          background: "rgb(88, 88, 88)",
+          color: "white",
+          maxWidth: "40%",
+          alignContent: "center",
+          border: "3px solid grey",
+        }}
+      >
+        <p>
+          <b style={{ textDecoration: "underline" }}>Full Name:</b>{" "}
+          {user.fullName}
+        </p>
+        <p>
+          <b style={{ textDecoration: "underline" }}>Email:</b>{" "}
+          {user.emailAddresses[0].emailAddress}
+        </p>
+        <p>
+          <b style={{ textDecoration: "underline" }}>UserID:</b> {userIdMasked}
+        </p>{" "}
+        {/* Display masked userId */}
         {userData && (
           <div>
             <p>Data from backend API:</p>
             <pre>{JSON.stringify(userData, null, 2)}</pre>
           </div>
         )}
-      </div>
+      </Container>
     );
   }
 
