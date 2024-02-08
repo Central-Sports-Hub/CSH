@@ -22,6 +22,7 @@ export default function Ticket(ticket) {
           objectFit: "cover",
           border: "2px solid gray",
         }}
+        alt="stadium"
       />
 
       <Link
