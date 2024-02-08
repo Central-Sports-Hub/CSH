@@ -25,6 +25,7 @@ export default function Venue({
           objectFit: "cover",
           border: "2px solid gray",
         }}
+        alt="location"
       />
       <Card.Body>
         <Card.Title className="text-center">
@@ -62,7 +63,11 @@ export default function Venue({
             marginBottom: "10px",
           }}
         >
-          <img style={{ height: "50px" }} src={sport && `/pictures/${sport}`} />
+          <img
+            style={{ height: "50px" }}
+            src={sport && `/pictures/${sport}`}
+            alt="sport"
+          />
         </Card.Text>
       </Card.Body>
     </Card>

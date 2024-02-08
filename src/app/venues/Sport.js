@@ -44,6 +44,7 @@ export default function Sport({ sport, venues, logoSrc, startHidden = true }) {
                   width: height,
                   height: height,
                 }}
+                alt="stadium image"
               />
             )}
             {sport}
