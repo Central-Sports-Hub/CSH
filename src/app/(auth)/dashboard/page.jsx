@@ -32,7 +32,7 @@ const Page = () => {
   if (isSignedIn) {
     console.log("user:", user);
     const { firstName, lastName } = user;
-    const userIdMasked = "*****" + userId.slice(-5); // Mask the userId
+    const userIdMasked = "*****" + userId.slice(-5);
 
     return (
       <Row>
